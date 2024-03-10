@@ -31,7 +31,7 @@ app.use(helmet.frameguard({ action: "sameorigin" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("/", (req, res) => {res.send("Hello!")});
+app.use("/", (req: Request, res: Response) => {res.send("Hello!")});
 app.use("/emails", mailRouter);
 
 app.use("*", () => {
